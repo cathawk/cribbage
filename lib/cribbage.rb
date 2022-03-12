@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "cribbage/version"
+require "cribbage/version"
 
 module Cribbage
   class Error < StandardError; end
