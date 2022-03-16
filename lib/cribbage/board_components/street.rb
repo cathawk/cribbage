@@ -9,16 +9,8 @@ module Cribbage
       attr_reader :holes, :start_holes
 
       def initialize
-        @holes = setup_holes(NUMBER_HOLES)
-        @start_holes = setup_holes(NUMBER_START_HOLES)
-      end
-
-      private
-
-      def setup_holes(number_holes)
-        (0..number_holes).each_with_index.map { |hole_number|
-          Hole.new(street: self, index: hole_number, contains_peg: false)
-        }
+        @holes = Hole.generate_collection(NUMBER_HOLES)
+        @start_holes = Hole.generate_collection(NUMBER_START_HOLES)
       end
     end
   end
